@@ -1,0 +1,13 @@
+# Global defaults
+Host *
+    AddKeysToAgent yes
+    ForwardAgent yes
+    # UseKeychain yes # MacOS
+
+# GitHub
+Host github.com
+    User git
+
+    # No IdentityFile needed if using 1Password's SSH agent with the key stored there
+    # IdentityFile ~/.ssh/id_ed25519_github # Example if you needed a specific key file
+
