@@ -1,0 +1,22 @@
+" --- Minimal .vimrc Configuration ---
+
+" Disable Vi compatibility mode. This is crucial for modern Vim behavior.
+" It tells Vim not to try and emulate the very old 'vi' editor,
+" which is key for backspace to work as expected.
+set nocompatible
+
+" Set the backspace key behavior in insert mode:
+" 'indent': allows backspacing over auto-indentation.
+" 'eol': allows backspacing over end-of-line characters (joining lines).
+" 'start': allows backspacing over text typed before the current insert mode session.
+set backspace=indent,eol,start
+
+" Show line numbers (optional, but very commonly desired).
+set number
+
+" Enable filetype detection (helps with basic file-specific settings).
+" This is usually very lightweight and should generally work.
+filetype indent on
+filetype plugin on
+
+" --- End of Minimal .vimrc ---
