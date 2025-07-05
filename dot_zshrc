@@ -5,7 +5,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # These plugins cause output - move them above the instant promp
-plugins=(git ssh-agent)
+plugins=(git ssh-agent fzf)
 
 # Run plugin that causes output early to avoid interfering with p10k instant prompt
 # source $ZSH/oh-my-zsh.sh
