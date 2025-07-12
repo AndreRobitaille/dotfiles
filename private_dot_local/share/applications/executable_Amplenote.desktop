@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Amplenote
+Comment=Amplenote
+Exec=brave --new-window --ozone-platform=wayland --app="https://www.amplenote.com/notes/jots?tag=daily-jots" --name="Amplenote" --class="Amplenote"
+Terminal=false
+Type=Application
+Icon=/home/andre/.local/share/applications/icons/ChatGPT.png
+StartupNotify=true
