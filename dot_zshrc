@@ -7,6 +7,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # These plugins cause output - move them above the instant promp
 plugins=(git ssh-agent fzf)
 
+# Remove irrelevant results from fzf Ctrl-T
+export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow \
+                           --exclude .git --exclude .local/state'
+
 # Run plugin that causes output early to avoid interfering with p10k instant prompt
 # source $ZSH/oh-my-zsh.sh
 
