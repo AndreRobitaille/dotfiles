@@ -1,5 +1,3 @@
-" --- Minimal .vimrc Configuration ---
-
 " Disable Vi compatibility mode. This is crucial for modern Vim behavior.
 " It tells Vim not to try and emulate the very old 'vi' editor,
 " which is key for backspace to work as expected.
@@ -19,4 +17,3 @@ set number
 filetype indent on
 filetype plugin on
 
-" --- End of Minimal .vimrc ---
