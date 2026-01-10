@@ -9,7 +9,7 @@ plugins=(git ssh-agent fzf)
 
 # Remove irrelevant results from fzf Ctrl-T
 export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow \
-                           --exclude .git --exclude .local/state'
+                           --exclude .git --exclude .local/state --exclude .steam'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -113,7 +113,45 @@ alias nv="nvim"
 alias vi="nvim"
 alias cm="chezmoi"
 alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 
+# mise
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+fi
 
-# Start starship
-eval "$(starship init zsh)"
+# starship
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
+
+# zoxide
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
+
+# try
+if command -v try >/dev/null 2>&1; then
+  eval "$(try init ~/Work/tries)"
+fi
+
+# fzf
+if command -v fzf >/dev/null 2>&1; then
+  # Arch / system-wide installs
+  [[ -f /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
+  [[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
+fi
+
+# use eza instead of ls
+if command -v eza >/dev/null 2>&1; then
+  alias ls='eza -lh --group-directories-first --icons=auto'
+  alias la='ls -a'
+  alias lt='eza --tree --level=2 --long --icons --git'
+  alias lta='lt -a'
+fi
+
+open() {
+  xdg-open "$@" >/dev/null 2>&1 &
+}
+
+. "$HOME/.local/share/../bin/env"
